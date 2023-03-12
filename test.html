@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crypto Walelt Addresses</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Crypto Wallet Addresses</h1>
+		<div class="box">
+			<p><span class="coin">ETH:</span> <span class="address" data-address="0x99a96952863C0813d34dfC79fc1C65eb4BE24Df2">0x99a96952863C0813d34dfC79fc1C65eb4BE24Df2</span> <button class="copy-btn" onclick="copyAddress('0x99a96952863C0813d34dfC79fc1C65eb4BE24Df2')">Copy</button></p>
+            <p><span class="coin">XMR:</span> <span class="address" data-address="46tBvMLe8BV2tjw8S7aSZ1VVaf3pSTjrz91UMbbJ8AJHf6iq2KnGmFDYMn1PEpcqWoXqifDDMmCiwKY9WyWDqcSWSoEHyQd">46tBvMLe8BV2tjw8S7aSZ1VVaf3pSTjrz91UMbbJ8AJHf6iq2KnGmFDYMn1PEpcqWoXqifDDMmCiwKY9WyWDqcSWSoEHyQd</span> <button class="copy-btn" onclick="copyAddress('46tBvMLe8BV2tjw8S7aSZ1VVaf3pSTjrz91UMbbJ8AJHf6iq2KnGmFDYMn1PEpcqWoXqifDDMmCiwKY9WyWDqcSWSoEHyQd')">Copy</button></p>
+			<p><span class="coin">BTC:</span> <span class="address" data-address="bc1q2tc8kdq08wk4llp8lr2trux2szmedhjqv8nvlm">bc1q2tc8kdq08wk4llp8lr2trux2szmedhjqv8nvlm</span> <button class="copy-btn" onclick="copyAddress('bc1q2tc8kdq08wk4llp8lr2trux2szmedhjqv8nvlm')">Copy</button></p>
+			<p><span class="coin">USDT ERC20:</span> <span class="address" data-address="0x99a96952863C0813d34dfC79fc1C65eb4BE24Df2">0x99a96952863C0813d34dfC79fc1C65eb4BE24Df2</span> <button class="copy-btn" onclick="copyAddress('0x99a96952863C0813d34dfC79fc1C65eb4BE24Df2')">Copy</button></p>
+			<p><span class="coin">USDC ERC20:</span> <span class="address" data-address="0x99a96952863C0813d34dfC79fc1C65eb4BE24Df2">0x99a96952863C0813d34dfC79fc1C65eb4BE24Df2</span> <button class="copy-btn" onclick="copyAddress('0x99a96952863C0813d34dfC79fc1C65eb4BE24Df2')">Copy</button></p>
+			<p><span class="coin">LTC:</span> <span class="address" data-address="ADDY">ltc1qj8ahz443tdsz7kh7tpjxnkp44tmmvqr26z7439</span> <button class="copy-btn" onclick="copyAddress('ltc1qj8ahz443tdsz7kh7tpjxnkp44tmmvqr26z7439')">Copy</button></p>
+			<p><span class="coin">TRX:</span> <span class="address" data-address="TLJ3DPX4w57BUEqWU6CTtS2ce42DGcuV1S">TLJ3DPX4w57BUEqWU6CTtS2ce42DGcuV1S</span> <button class="copy-btn" onclick="copyAddress('TLJ3DPX4w57BUEqWU6CTtS2ce42DGcuV1S')">Copy</button></p>
+			<p><span class="coin">USDT TRX:</span> <span class="address" data-address="TLJ3DPX4w57BUEqWU6CTtS2ce42DGcuV1S">TLJ3DPX4w57BUEqWU6CTtS2ce42DGcuV1S</span> <button class="copy-btn" onclick="copyAddress('TLJ3DPX4w57BUEqWU6CTtS2ce42DGcuV1S')">Copy</button></p>
+			<p><span class="coin">USDC TRX:</span> <span class="address" data-address="TLJ3DPX4w57BUEqWU6CTtS2ce42DGcuV1S">TLJ3DPX4w57BUEqWU6CTtS2ce42DGcuV1S</span> <button class="copy-btn" onclick="copyAddress('TLJ3DPX4w57BUEqWU6CTtS2ce42DGcuV1S')">Copy</button></p>
+
+        
+        
+        </div>
+	</div>
+	
+	<script>
+        function copyAddress(address) {
+            var addressElement = document.querySelector('[data-address="' + address + '"]');
+            var range = document.createRange();
+            range.selectNode(addressElement);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();
+    
+            var popup = document.createElement("div");
+            popup.innerHTML = "Copied Address";
+            popup.className = "popup";
+            document.body.appendChild(popup);
+            setTimeout(function() {
+                document.body.removeChild(popup);
+            }, 3000);
+        }
+    </script>
+    
+</body>
+</html>
